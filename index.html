@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Star Wars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container cont" align="center" id="first">
+        <div class="back">
+            <div class="dv">
+                <img src="./assets/images/starwars-darth-vader.png" class="image" id="img1">
+            </div>
+            <div class="box" align="center">
+                <h1 align="center">
+                    Unlock the force
+                </h1>
+                <div class="login-form">
+                    <form autocomplete="off">
+                        <input type="text" name="username" placeholder="Username" class="text_box animated fadeInLeft"
+                               required minlength="4" maxlength="20"
+                               autocomplete="off">
+                        <br>
+                        <input type="password" name="password" placeholder="Password" class="text_box animated fadeInRight"
+                               autocomplete="off"
+                               required minlength="5" maxlength="20">
+                        <br>
+                        <input type="submit" [disabled]="password.errors || name.errors" value="Submit"
+                               class="button" size="35" id="button1">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="listing">
+            <hr>
+            <h1 align="left">Unlock the force</h1>
+            <h2 class="color" align="left"> Please choose your character</h2>
+            <div class="main" align="center">
+                <!--<div class="container_image1 animated wobble">-->
+                <div class="container_image1" id="ct">
+
+                </div>
+
+                <div class="row">
+                    <button id="button2" class="button animated bounceIn">VIEW DETAIL</button>
+                </div>
+            </div>
+    </div>
+
+
+    <div class="detail">
+        <h1> Unlock the force</h1>
+
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/script.min.js"></script>
+</body>
+
+</html>

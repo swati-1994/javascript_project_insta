@@ -1,0 +1,46 @@
+{
+"data" : [{
+        "id": 0,
+        "name": "BB-8",
+        "image": "assets/images/bb-8.png",
+        "about": "abcdkjdkjendkjn kjendjk2dn2k",
+        "animation": "flip"
+    },
+    {
+        "id": 1,
+        "name": "Darth-Vader",
+        "image": "assets/images/darth-vader.png",
+        "about": "Lorem ipsum dolorjbskjwnsjknwkswsjn",
+        "animation": "flash"
+    },
+    {
+        "id": 2,
+        "name": "Boba-Fett",
+        "image": "assets/images/starwars-boba-fett.png",
+        "about": "Lorem ipsum dolorjbskjwnsjknwkswsjn",
+        "animation": "rubberBand"
+    },
+    {
+        "id": 3,
+        "name": "C-3Po",
+        "image": "assets/images/starwars-c-3po.png",
+        "about": "Lorem ipsum dolorjbskjwnsjknwkswsjn",
+        "animation": "bounce"
+    },
+    {
+        "id": 4,
+        "name": "R2-D2",
+        "image": "assets/images/starwars-r2-d2.png",
+        "about": "Lorem ipsum dolorjbskjwnsjknwkswsjn",
+        "animation": "tada"
+    },
+    {
+        "id": 5,
+        "name": "Stormtrooper",
+        "image": "assets/images/starwars-stormtrooper.png",
+        "about": "Lorem ipsum dolorjbskjwnsjknwkswsjn",
+        "animation": "wobble"
+    }]
+}
+
+
