@@ -7,7 +7,7 @@ var pageId = null;
 
 var button_id=null;
 
-/*if( 'onhashchange' in window ) {
+if( 'onhashchange' in window ) {
     // Setup our event listener for the hash change
     window.addEventListener('hashchange', changeView, false);
     // Our custom event handler
@@ -23,7 +23,7 @@ var button_id=null;
 
         // alert(type);
     }
-}*/
+}
 
 (function ($) {
 
@@ -71,7 +71,8 @@ var button_id=null;
             pageId = '2';
 
             $.each(json_obj.data, function( k, v ){
-                $("#ct").append('<div class=""><div><img src="' + json_obj.data[k]["image"] + '" class="animated wobble"></div></div>'+'<br>'+
+                $("#ct").append('<div class=""><div><img src="' + json_obj.data[k]["image"] + '" class="animated wobble">' +
+                    '</div></div>'+'<br>'+
                     '<div><input type="radio" name="characters" class="radio" id='+json_obj.data[k]["id"]+'></div>'
                 );
             });
@@ -89,7 +90,8 @@ var button_id=null;
                 history.pushState("detail", "page3", name);
                 $(".detail").show();
                 pageId = '3';
-                $(".detail").append('<div><h1> Unlock the force</h1><img src="' + json_obj.data[button_id]["image"] + '" class="image3 animated fadeInDownBig"></div>'+
+                $(".detail").append('<div><h1> Unlock the force</h1><img src="' + json_obj.data[button_id]["image"] + '"' +
+                    ' class="image3 animated fadeInDownBig"></div>'+
                     '<div class="content3 animated rubberBand">'+
                     '<h1>'+json_obj.data[button_id]["name"]+' </h1>'+
                     '<p>'+json_obj.data[button_id]["about"]+'</p>'+
