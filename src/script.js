@@ -24,11 +24,10 @@ var button_id=null;
              $(".listing").show();
 
              $.each(json_obj.data, function( k, v ){
-                 $("#ct").append('<div class="image1"><img src="' + json_obj.data[k]["image"] + '"></div>'+'<br>'+
+                 $("#ct").append('<div class=""><div><img src="' + json_obj.data[k]["image"] + '" class="animated wobble"></div></div>'+'<br>'+
                          '<div><input type="radio" name="characters" class="radio" id='+json_obj.data[k]["id"]+'></div>'
                  );
              });
-
              $(".radio").click(function(event) {
                 button_id= event.target.id;
              });
@@ -38,42 +37,22 @@ var button_id=null;
          $("#button2").click(function(){
 
              if(button_id) {
-
+                 var name=json_obj.data[button_id]["name"]
                  $(".listing").hide();
-                 history.pushState("detail", "page3", "detail");
+                 history.pushState("detail", "page3", name);
                  $(".detail").show();
-
-
-                 $(".detail").append('<div><img src="' + json_obj.data[button_id]["image"] + '"></div>'+
-                         '<div class="content3">'+
+                 $(".detail").append('<div><h1> Unlock the force</h1><img src="' + json_obj.data[button_id]["image"] + '" class="image3 animated fadeInDownBig"></div>'+
+                         '<div class="content3 animated rubberBand">'+
                      '<h1>'+json_obj.data[button_id]["name"]+' </h1>'+
                      '<p>'+json_obj.data[button_id]["about"]+'</p>'+
                  '</div>'
                  );
              }
-
              else{
                  alert("Please select any one image");
                  $(".listing").show();
-
-
              }
-            // var swati=id;
-            // console.log("id",swati)
-
-             // $.each(json_obj.data, function( k, v ){
-             //     $("#ct").append('<div><img class="image1" src="' + json_obj.data[k]["image"] + '"></div>'+
-             //         '<input type="radio" name="charecters"  class="radio">'
-             //     );
-             //
-             // });
          });
-
-
-
      });
 })(jQuery);
-
-
-// <input type="radio" name="charecters"  class="radio" >
 

@@ -11,5 +11,8 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-watch": "latest",
     "grunt-postcss": "^0.8.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2"
   }
 }

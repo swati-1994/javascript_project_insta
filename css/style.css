@@ -48,12 +48,13 @@
 html {
   display: inline-block; }
 
+.main {
+  width: 100%;
+  float: left;
+  padding: 15px; }
+
 .container_image1 {
   position: relative; }
-
-.image {
-  width: 30%;
-  height: auto; }
 
 .image1 {
   width: 16.66%;
@@ -67,7 +68,6 @@ html {
   font-size: 16px;
   cursor: pointer; }
 
-/*button*/
 .color {
   color: #A9A9A9; }
 
@@ -86,17 +86,8 @@ hr {
 
 .content3 {
   border: 2px solid #A9A9A9;
-  width: 40%;
+  width: 30%;
   float: left;
   padding: 10px;
-  height: 300px;
+  height: 200px;
   box-shadow: 10px 10px 5px #888888; }
-
-main {
-  max-width: 4000px;
-  margin: 0 auto;
-  color: #000;
-  display: -ms-flexbox;
-  display: flex; }
-  main h1 {
-    font-size: 2em; }

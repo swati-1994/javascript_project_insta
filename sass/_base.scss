@@ -63,26 +63,32 @@ html {
 
 //scss forlisting page
 
-//.main {
-//  width: 100%;
-//  float: center;
-//  padding: 15px;
-//}
+.main {
+  width: 100%;
+  float: left;
+  padding: 15px;
+}
 
 .container_image1 {
   position: relative;
 }
 
-.image {
-  width: 30%;
-  height: auto;
-}
+//.image {
+//  width: 30%;
+//  height: auto;
+//}
 
 .image1 {
   width: 16.66%;
   height: auto;
   float: left;
 }
+
+//.image {
+//  display: block;
+//  width: 100%;
+//  height: auto;
+//}
 
 .button {
   background-color: #F6CE00;
@@ -92,12 +98,7 @@ html {
   cursor: pointer;
 }
 
-/*button*/
-//.button {
-//  width: 25%;
-//  float: left;
-//  padding: 15px;
-//}
+
 
 .color {
   color: #A9A9A9;
@@ -113,36 +114,6 @@ hr {
   text-align: left;
 }
 
-
-
-//.button {
-//  background-color: #F6CE00;
-//  border: none;
-//  color: #3F3F3F;
-//  font-size: 16px;
-//  cursor: pointer;
-//}
-//
-///*button*/
-//.button {
-//  width: 25%;
-//  float: left;
-//  padding: 15px;
-//}
-//
-//.color {
-//  color: #A9A9A9;
-//}
-//
-//hr {
-//  border: none;
-//  height: 5px;
-//  color: #F6CE00;
-//  background-color: #F6CE00;
-//  width: 5%;
-//  margin-left: 0;
-//  text-align: left;
-//}
 .image3 {
   float: left;
   height: 300px;
@@ -150,28 +121,10 @@ hr {
 
 .content3 {
   border: 2px solid #A9A9A9;
-  width: 40%;
+  width: 30%;
   float: left;
   padding: 10px;
-  height: 300px;
+  height: 200px;
   box-shadow: 10px 10px 5px #888888;
 }
 
-//hr {
-//  border: none;
-//  height: 5px;
-//  color: #F6CE00;
-//  background-color: #F6CE00;
-//  width:5%;
-//  margin-left:0;
-//  text-align:left;
-//}
-//
-//.go-back {
-//  font-weight: bold;
-//  cursor: pointer;
-//}
-//
-//.go-back img {
-//  max-height: 10px;
-//}
