@@ -20,6 +20,7 @@ var button_id=null;
 
          $("#button1").click(function(){
              $("#first").hide();
+             history.pushState("listing", "page2", "listing");
              $(".listing").show();
 
              $.each(json_obj.data, function( k, v ){
@@ -39,6 +40,7 @@ var button_id=null;
              if(button_id) {
 
                  $(".listing").hide();
+                 history.pushState("detail", "page3", "detail");
                  $(".detail").show();
 
 
@@ -74,3 +76,4 @@ var button_id=null;
 
 
 // <input type="radio" name="charecters"  class="radio" >
+
