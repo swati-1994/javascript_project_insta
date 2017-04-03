@@ -5,15 +5,26 @@ $.getJSON("mock_data.json", function (data) {
 
 var pageId = null;
 
-function validateForm() {
-    var x = document.forms["myForm"]["fname"].value;
-    if (x === "") {
-        alert("Name must be filled out");
-        return false;
-    }
-}
-
 var button_id=null;
+
+/*if( 'onhashchange' in window ) {
+    // Setup our event listener for the hash change
+    window.addEventListener('hashchange', changeView, false);
+    // Our custom event handler
+    function changeView() {
+        var type = window.location.hash.substr(1);
+
+        if (pageId==='3' && type==='listing') {
+            $(".detail").hide();
+            $(".listing").show();
+            pageId = 2;
+        }
+
+
+        // alert(type);
+    }
+}*/
+
 (function ($) {
 
     $(window).on('popstate', function(event) {
@@ -32,8 +43,24 @@ var button_id=null;
     $(function () {
         var id=null;
         $(document).ready(function(){
-            pageId = '1';
+            $("#first").hide();
             $(".listing").hide();
+            $(".detail").hide();
+
+            if (pageId === null) {
+                pageId = '1';
+            }
+
+            if (pageId==='1') {
+                $("#first").show();
+            }
+            else if (pageId==='2') {
+                $(".listing").show();
+            }
+            else if (pageId==='3') {
+                $(".detail").show();
+            }
+
         });
 
         $("#button1").click(function(){
