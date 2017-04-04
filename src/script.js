@@ -7,7 +7,9 @@ var pageId = null;
 
 var button_id = null;
 
-window.onbeforeunload = function() { return "You work will be lost."; };
+window.onbeforeunload = function () {
+    return "You work will be lost.";
+};
 
 if ('onhashchange' in window) {
     // Setup our event listener for the hash change
@@ -66,9 +68,11 @@ if ('onhashchange' in window) {
         });
 
         $("#button1").click(function () {
-            var x = document.getElementById("fname").value;
             // var y=document.getElementById("password").value;
-            if (x == 'yoda') {
+            var x = document.getElementById("fname").value;
+            var y = document.getElementById("password").value;
+
+            if (x == 'yoda' && y == 'dogbah') {
                 $("#first").hide();
                 history.pushState("listing", "page2", "listing");
                 $(".listing").show();
@@ -87,7 +91,6 @@ if ('onhashchange' in window) {
             } else {
                 alert('invalid username');
             }
-
 
 
         });
@@ -116,4 +119,3 @@ if ('onhashchange' in window) {
         });
     });
 })(jQuery);
-
