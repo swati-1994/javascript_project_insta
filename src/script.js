@@ -64,6 +64,17 @@ if( 'onhashchange' in window ) {
         });
 
         $("#button1").click(function(){
+
+
+            var x = document.getElementById("fname").value;
+            if (x == 'yoda') {
+                alert("hii");
+            } else {
+                alert('demo');
+            }
+
+
+
             $("#first").hide();
             history.pushState("listing", "page2", "listing");
             $(".listing").show();
