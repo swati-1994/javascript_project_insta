@@ -5,16 +5,21 @@ $.getJSON("mock_data.json", function (data) {
 
 var pageId = null;
 
-var button_id=null;
+var button_id = null;
 
-if( 'onhashchange' in window ) {
+
+$( "listing" ).load( $(".listing").show(), function() {
+    alert( "Load was performed." );
+});
+
+if ('onhashchange' in window) {
     // Setup our event listener for the hash change
     window.addEventListener('hashchange', changeView, false);
     // Our custom event handler
     function changeView() {
         var type = window.location.hash.substr(1);
 
-        if (pageId==='3' && type==='listing') {
+        if (pageId === '3' && type === 'listing') {
             $(".detail").hide();
             $(".listing").show();
             pageId = 2;
@@ -27,7 +32,7 @@ if( 'onhashchange' in window ) {
 
 (function ($) {
 
-    $(window).on('popstate', function(event) {
+    $(window).on('popstate', function (event) {
 
         if (pageId === '2') {
             $(".listing").hide();
@@ -41,8 +46,8 @@ if( 'onhashchange' in window ) {
     });
 
     $(function () {
-        var id=null;
-        $(document).ready(function(){
+        var id = null;
+        $(document).ready(function () {
             $("#first").hide();
             $(".listing").hide();
             $(".detail").hide();
@@ -51,65 +56,63 @@ if( 'onhashchange' in window ) {
                 pageId = '1';
             }
 
-            if (pageId==='1') {
+            if (pageId === '1') {
                 $("#first").show();
             }
-            else if (pageId==='2') {
+            else if (pageId === '2') {
                 $(".listing").show();
             }
-            else if (pageId==='3') {
+            else if (pageId === '3') {
                 $(".detail").show();
             }
 
         });
 
-        $("#button1").click(function(){
-
-
+        $("#button1").click(function () {
             var x = document.getElementById("fname").value;
+            // var y=document.getElementById("password").value;
             if (x == 'yoda') {
-                alert("hii");
+                $("#first").hide();
+                history.pushState("listing", "page2", "listing");
+                $(".listing").show();
+
+                pageId = '2';
+
+                $.each(json_obj.data, function (k, v) {
+                    $("#ct").append('<div class=""><div><img src="' + json_obj.data[k]["image"] + '" class="animated wobble">' +
+                        '</div></div>' + '<br>' +
+                        '<div><input type="radio" name="characters" class="radio" id=' + json_obj.data[k]["id"] + '></div>'
+                    );
+                });
+                $(".radio").click(function (event) {
+                    button_id = event.target.id;
+                });
             } else {
-                alert('demo');
+                alert('invalid username');
             }
 
 
 
-            $("#first").hide();
-            history.pushState("listing", "page2", "listing");
-            $(".listing").show();
-
-            pageId = '2';
-
-            $.each(json_obj.data, function( k, v ){
-                $("#ct").append('<div class=""><div><img src="' + json_obj.data[k]["image"] + '" class="animated wobble">' +
-                    '</div></div>'+'<br>'+
-                    '<div><input type="radio" name="characters" class="radio" id='+json_obj.data[k]["id"]+'></div>'
-                );
-            });
-            $(".radio").click(function(event) {
-                button_id= event.target.id;
-            });
         });
 
 
-        $("#button2").click(function(){
+        $("#button2").click(function () {
 
-            if(button_id) {
-                var name=json_obj.data[button_id]["name"]
+            if (button_id) {
+                var name = json_obj.data[button_id]["name"]
                 $(".listing").hide();
                 history.pushState("detail", "page3", name);
                 $(".detail").show();
                 pageId = '3';
                 $(".detail").append('<div><h1> Unlock the force</h1><img src="' + json_obj.data[button_id]["image"] + '"' +
-                    ' class="image3 animated fadeInDownBig"></div>'+
-                    '<div class="content3 animated rubberBand">'+
-                    '<h1>'+json_obj.data[button_id]["name"]+' </h1>'+
-                    '<p>'+json_obj.data[button_id]["about"]+'</p>'+
+                    ' class="image3 animated fadeInDownBig"></div>' +
+                    '<div class="content3 animated rubberBand">' +
+                    '<h1>' + json_obj.data[button_id]["name"] + ' </h1>' +
+                    '<p>' + json_obj.data[button_id]["about"] + '</p>' +
                     '</div>'
                 );
             }
-            else{
+            else {
                 alert("Please select any one image");
                 $(".listing").show();
             }
