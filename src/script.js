@@ -7,10 +7,7 @@ var pageId = null;
 
 var button_id = null;
 
-
-$( "listing" ).load( $(".listing").show(), function() {
-    alert( "Load was performed." );
-});
+window.onbeforeunload = function() { return "You work will be lost."; };
 
 if ('onhashchange' in window) {
     // Setup our event listener for the hash change
